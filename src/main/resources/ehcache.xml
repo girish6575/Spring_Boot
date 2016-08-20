@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+	<diskStore path="java.io.tmpdir" />
+	<defaultCache maxElementsInMemory="10" eternal="false"
+		timeToIdleSeconds="120" timeToLiveSeconds="120" overflowToDisk="true" />
+	<cache name="books" maxElementsInMemory="50" eternal="false"
+		overflowToDisk="true" timeToIdleSeconds="100000" timeToLiveSeconds="100000" />
+</ehcache>
+
+
+<!-- 
+timeToIdleSeconds enables cached object to be kept in as long as it is requested in periods shorter than timeToIdleSeconds. 
+timeToLiveSeconds will make the cached object be invalidated after that many seconds irregardless of how many times 
+or when it was requested.
+Let's say that timeToIdleSeconds = 3. Object will be invalidated if it hasn't been requested for 4 seconds.
+If timeToLiveSeconds = 90 then the object will be removed from cache after 90 seconds even if it has been 
+requested few milliseconds in the 90th second of its short life.
+ -->
